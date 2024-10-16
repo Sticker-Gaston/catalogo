@@ -10,7 +10,7 @@ const Menu = () => {
     // Detecta el scroll
     useEffect(() => {
       const handleScroll = () => {
-        if (window.scrollY > 400) {
+        if (window.scrollY > 80) {
           setIsScrolled(true);
         } else {
           setIsScrolled(false);
@@ -39,21 +39,29 @@ const Menu = () => {
                 <Flex
                     direction={isScrolled ? 'row' : 'column'}
                     alignItems="center"
-                    justifyContent="center"
-                    width={isScrolled ? 'auto' : '100%'}
+                    justifyContent={isScrolled ? 'space-between' : 'center'}
+                    width={'100%'}
                 >
-                    <Image
-                        borderRadius="full"
-                        boxSize={isScrolled ? '50px' : '300px'}
-                        src="public/favicon.svg"
-                        alt="Sticker Gaston"
-                        transition="all 0.5s ease"
-                    />
-                    <Heading lineHeight='tall' size={isScrolled ? 'lg' : '4xl'} mt={isScrolled ? '0px' : '50px'} ml={isScrolled ? '15px' : '0px'}>
-                        <Highlight query='GASTON' styles={{ px: '5', py: '1', rounded: 'full', bg: 'teal.100', }} >
-                            STICKER GASTON
-                        </Highlight>
-                    </Heading>
+                    <Flex
+                        mt={isScrolled ? '0' : '50px'}
+                        width={isScrolled ? 'auto' : '40%'}
+                        alignItems="center"
+                        justifyContent={isScrolled ? 'flex-start' : 'space-evenly'}
+                        direction={isScrolled ? 'row' : 'column'}
+                    >
+                        <Image
+                            borderRadius="full"
+                            boxSize={isScrolled ? '50px' : '300px'}
+                            src="public/favicon.svg"
+                            alt="Sticker Gaston"
+                            transition="all 0.5s ease"
+                        />
+                        <Heading lineHeight='tall' size={isScrolled ? 'lg' : '4xl'} mt={isScrolled ? '0px' : '50px'} ml={isScrolled ? '15px' : '0px'}>
+                            <Highlight query='GASTON' styles={{ px: '5', py: '1', rounded: 'full', bg: 'teal.100', }} >
+                                STICKER GASTON
+                            </Highlight>
+                        </Heading>
+                    </Flex>
                     <Flex
                         mt={isScrolled ? '0' : '50px'}
                         width={isScrolled ? 'auto' : '40%'}

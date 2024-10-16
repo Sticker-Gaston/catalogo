@@ -91,14 +91,14 @@ const Grilla = () => {
 
     const animacionGrilla = {
         offscreen: {
-          y: 1000
+          y: 100
         },
         onscreen: {
           y: 50,
           transition: {
             type: "spring",
             bounce: 0.4,
-            duration: 0.8
+            duration: 1
           }
         }
       };
@@ -111,7 +111,7 @@ const Grilla = () => {
                     className="card-container"
                     initial="offscreen"
                     whileInView="onscreen"
-                    viewport={{ once: true, amount: 0.8 }}
+                    viewport={{ once: true, amount: 1 }}
                     >
                         <motion.div variants={animacionGrilla}>
                             <Producto key={index} nombre={producto.nombre} detalle={producto.detalle} imagen={producto.imagen} />
