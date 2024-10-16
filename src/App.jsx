@@ -1,13 +1,16 @@
 import { useState } from 'react'
-import { Card } from './Components/Card/Card'
+import { ChakraProvider} from '@chakra-ui/react'
+import { Grilla } from './Components/Grilla/Grilla'
+import { Menu } from './Components/Menu/Menu'
 
 function App() {
   
 
   return (
-    <div>
-      <Card/>
-    </div>
+    <ChakraProvider>
+      <Menu/>
+      <Grilla/>
+    </ChakraProvider>
   )
 }
 
